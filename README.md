@@ -16,13 +16,9 @@ pip install Pillow
 
 ## Usage
 
-Find this line:
+Run this script.
+And type your image name. E.g input.png
 
-```sh
-if __name__ == '__main__':
-    img = "input.jpeg"
-```
-and change img string that your image name.
 And Ta-Da
 ![Input and Output](https://raw.githubusercontent.com/Furkan-Demir/ImageToExcel/main/README-src/imagetoexcel.png)
 ## My Accounts

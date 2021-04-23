@@ -6,15 +6,18 @@ from PIL import Image
 
 
 def Resize(img):
-    img = Image.open(img)
+    try:
+        img = Image.open(img)
 
-    new_img = img.resize((64,64), Image.ANTIALIAS)
-    size = new_img.size
-    if size[0] > size[1]:
-        maxDimensionPixel = size[0]
-    else:
-        maxDimensionPixel = size[0]
-    return maxDimensionPixel, new_img
+        new_img = img.resize((64,64), Image.ANTIALIAS)
+        size = new_img.size
+        if size[0] > size[1]:
+            maxDimensionPixel = size[0]
+        else:
+            maxDimensionPixel = size[0]
+        return maxDimensionPixel, new_img
+    except:
+        raise Exception("File not exist")
 
 def excel(pixel,img):
     try:
@@ -43,7 +46,9 @@ def excel(pixel,img):
 
 
 if __name__ == '__main__':
-    img = "input.jpeg"
+    print("Welcome to Image To Excel Python Program\nType a file name (E.g input.jpeg ) \nIt's have to exist same this python's script directory")
+
+    img = input("File name: ")
     pixel, img = Resize(img)
     status = excel(pixel,img)
     if status == True:
